@@ -324,11 +324,46 @@
     Nav cross-link
   </a>
   
+    <nav class="md-nav" aria-label="Nav cross-link">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inferred-sub-directory" class="md-nav__link">
+    Inferred sub-directory
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#nav_file" class="md-nav__link">
-    nav_file
+  <a href="#config-implicit_index" class="md-nav__link">
+    Config: implicit_index
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcards" class="md-nav__link">
+    Wildcards
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#config-nav_file" class="md-nav__link">
+    Config: nav_file
+  </a>
+  
+    <nav class="md-nav" aria-label="Config: nav_file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-off-your-nav-on-the-front-page" class="md-nav__link">
+    Show off your nav on the front page
   </a>
   
 </li>
@@ -340,10 +375,62 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-nav" class="md-nav__link">
+    Hybrid nav
+  </a>
+  
+    <nav class="md-nav" aria-label="Hybrid nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-native-nav-with-inferred-subdirectories" class="md-nav__link">
+    MkDocs native nav with inferred subdirectories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#details-about-hybrid-nav" class="md-nav__link">
+    Details about hybrid nav
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#migrating-from-gitbook" class="md-nav__link">
     Migrating from GitBook?
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extras" class="md-nav__link">
+    Extras
+  </a>
+  
+    <nav class="md-nav" aria-label="Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programmatic-control-over-the-nav" class="md-nav__link">
+    Programmatic control over the nav
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -414,7 +501,7 @@
 <a href="https://github.com/oprypin/mkdocs-literate-nav/actions?query=event%3Apush+branch%3Amaster"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/oprypin/mkdocs-literate-nav/CI" /></a></p>
 <div class="highlight"><pre><span></span><code>pip install mkdocs-literate-nav
 </code></pre></div>
-<p>Works well with <strong><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></strong>. Supplants <strong><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">awesome-pages</a></strong>.</p>
+<p>Works well with <strong><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></strong> and <strong><a href="https://oprypin.github.io/mkdocs-gen-files/">gen-files</a></strong>. Supplants <strong><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">awesome-pages</a></strong>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Activate the plugin in <strong>mkdocs.yml</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
@@ -422,7 +509,7 @@
   <span class="p p-Indicator">-</span> <span class="nt">literate-nav</span><span class="p">:</span>
       <span class="nt">nav_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SUMMARY.md</span>
 </code></pre></div>
-<p>and <strong>drop</strong> the <code>nav</code> section if it's present there; it will be ignored now.</p>
+<p>and <strong>drop</strong> the <code>nav</code> section if it's present there; it will be ignored now. (<a href="#hybrid-nav">Unless you want to keep it?</a>)</p>
 <table>
 <tr>
 <td>To get this navigation,</td>
@@ -456,7 +543,12 @@
 </code></pre></div>
 <p></td></tr></p>
 </table>
-<p>Note that, the way we wrote the Markdown, a section seems to also have a page associated with it. MkDocs doesn't actually support that, and neither is it representable in YAML directly, so the plugin tries to do the next best thing: include the link as the first page of the section. However, this structure is perfectly suited for the <strong><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></strong> plugin, which actually makes this work. Or you could just <em>not</em> associate a link with sections:</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The nav file must be put inside the <code>docs</code> directory -- at the root of it.</p>
+</div>
+<p>So, the plugin lets you specify your site's navigation with lists of links that are parsed according to normal Markdown rules.</p>
+<p>Note that, the way we wrote the Markdown, a section seems to also have a page associated with it. MkDocs doesn't actually support that, and neither is it representable in YAML directly, so the plugin tries to do the next best thing: include the link as the first page of the section. However, this structure is perfectly suited for the <em><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></em> plugin, which actually makes that work. Or you could just <em>not</em> associate a link with sections:</p>
 <table>
 <tr>
 <td>To get this navigation,</td>
@@ -489,7 +581,8 @@
 </code></pre></div>
 <p></td></tr></p>
 </table>
-<h4 id="nav-cross-link">Nav cross-link<a class="headerlink" href="#nav-cross-link" title="Permanent link">#</a></h4>
+<p>You can find more examples of the "literate nav" syntax <a href="https://github.com/oprypin/mkdocs-literate-nav/tree/master/tests/nav">in the testcases directory</a>.</p>
+<h3 id="nav-cross-link">Nav cross-link<a class="headerlink" href="#nav-cross-link" title="Permanent link">#</a></h3>
 <p>But why stop there? Each directory can have its own decoupled navigation list (see how the trailing slash initiates a nav cross-link):</p>
 <table>
 <tr>
@@ -527,16 +620,227 @@
 </code></pre></div>
 <p></td></tr></p>
 </table>
-<p>Or perhaps you don't care about the order of the pages under the borgs/ directory? Just drop the file <b>borgs/SUMMARY.md</b> and let it be inferred.</p>
-<p>The fallback behavior follows the <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">default behavior of MkDocs when nav isn't specified</a>, except that you can opt out on a per-directory basis.</p>
-<p>Is your directory structure not so tidy? That's not a problem, the implicit nav will not add duplicates of pages already mentioned elsewhere (but you can always add duplicates explicitly...)</p>
-<h4 id="nav_file"><code>nav_file</code><a class="headerlink" href="#nav_file" title="Permanent link">#</a></h4>
-<p>We've been using <strong>SUMMARY.md</strong> as the name of the file that specifies the nav, but naturally, you can use any other file name. The plugin takes care to not let MkDocs complain if you don't end up using the nav document as an actual page of your doc site.</p>
-<p>Or maybe you want the opposite -- make the nav page very prominent? You can actually use the index page, <strong>README.md</strong>, for the nav (and that's even the default)! Why would one do this? Well, GitHub (or another source hosting) also displays the Markdown files, and it's quite a nice perk to show off your navigation right in the index page of a directory. What's that, you ask? If the index page is taken up by navigation, we can't put any other content there, can we? Actually, we can! The nav list can just be put at the bottom of the page that also has whatever other content before that.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The nav file in the subdirectory is picked up <em>only</em> because its directory is explicitly mentioned in a parent nav file. <strong>SUMMARY.md</strong> (generally <a href="#config-nav_file"><code>nav-file</code></a>) files are <strong>not</strong> picked up implicitly (only the root nav file is "implicit").</p>
+<p>So you might say that the nav construction approach is exactly the opposite from the <em><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">awesome-pages</a></em> plugin.</p>
+<p>That said, an <a href="#inferred-sub-directory">inferred cross-linked directory</a> (whether directly or through <a href="#wildcards">wildcards</a>) gets resolved recursively, so that way you actually go back to implicit resolution.</p>
+</div>
+<h4 id="inferred-sub-directory">Inferred sub-directory<a class="headerlink" href="#inferred-sub-directory" title="Permanent link">#</a></h4>
+<p>Or perhaps you don't care about the order of the pages under the <strong>borgs/</strong> directory? Just drop the file <strong>borgs/SUMMARY.md</strong> and let it be inferred (recursively, if applicable).</p>
+<p>The fallback behavior follows the <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">default behavior of MkDocs when nav isn't specified</a>, except that you can leave out only some directory trees, rather than an all-or-nothing choice.</p>
+<h4 id="config-implicit_index">Config: <code>implicit_index</code><a class="headerlink" href="#config-implicit_index" title="Permanent link">#</a></h4>
+<p>When using a cross-linked nav, some states (like in the very first example in this doc, used for <em><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></em>) are not possible to represent.</p>
+<p>But you can configure the plugin with <code>implicit_index: true</code>, and then if the linked destination directory has an <code>index.md</code> or <code>README.md</code> file, it will be implicitly inserted into the nav at the root of such a directory.</p>
+<table>
+<tr>
+<td>To get this navigation,</td>
+<td>create the file <b>SUMMARY.md</b>:</td>
+<td>(old YAML equivalent:)</td>
+<p></tr><tr><td rowspan="3"></p>
+<ul>
+<li><a href="#index.md">Frob</a></li>
+<li><a href="#baz.md">Baz</a></li>
+<li><a href="#borgs/index.md">Borgs</a><ul>
+<li><a href="#borgs/bar.md">Bar</a></li>
+<li><a href="#borgs/foo.md">Foo</a></li>
+</ul>
+</li>
+</ul>
+<p></td><td></p>
+<div class="highlight"><pre><span></span><code><span class="k">*</span> [<span class="nt">Frob</span>](<span class="na">index.md</span>)
+<span class="k">*</span> [<span class="nt">Baz</span>](<span class="na">baz.md</span>)
+<span class="k">*</span> [<span class="nt">Borgs</span>](<span class="na">borgs/</span>)
+</code></pre></div>
+<p></td><td rowspan="3"></p>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">borgs/index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+</code></pre></div>
+<p><strong>Only if the file <strong>borgs/index.md</strong> exists!</strong></p>
+<p></td></tr><tr></p>
+<td>and the file <b>borgs/SUMMARY.md</b>:</td>
+<p></tr><tr><td></p>
+<div class="highlight"><pre><span></span><code><span class="k">*</span> [<span class="nt">Bar</span>](<span class="na">bar.md</span>)
+<span class="k">*</span> [<span class="nt">Foo</span>](<span class="na">foo.md</span>)
+</code></pre></div>
+<p></td></tr></p>
+</table>
+<h3 id="wildcards">Wildcards<a class="headerlink" href="#wildcards" title="Permanent link">#</a></h3>
+<p>Between the two extremes of entirely specifying a nav and entirely inferring it, there's the option of applying wildcards.</p>
+<p>Instead of putting links like <code>[Foo 1](foo_1.md)</code>, <code>[Foo 2](foo_2.md)</code> into the nav list, you can write a wildcard item: <code>foo_*.md</code>. A wildcard item is always required to have at least one <code>*</code> asterisk in it, and only wildcard items are allowed to remain "bare" (neither a link nor a section title). The asterisk indicates that there can be 0 or more arbitrary characters in its place.</p>
+<p>A wildcard item, whenever encountered in a list, will be replaced with every file <em>and directory</em> that matches it and is not mentioned in the nav explicitly already <em>and</em> hasn't been matched by any preceding wildcard items. It is possible to select only directories by adding a trailing slash, like <code>*/</code>. And to distinguish files, you have to rely on them having a file extension, and write e.g. <code>*.md</code>.</p>
+<p>So this can be used to full specify order for items that matter and apply wildcards for all other cases. Example:</p>
+<table>
+<tr>
+<td>By writing this literate nav file,</td>
+<td>you may get a nav like this:</td>
+<td>(assuming the files exist:)</td>
+<p></tr><tr><td></p>
+<div class="highlight"><pre><span></span><code><span class="k">-</span> [<span class="nt">Welcome</span>](<span class="na">index.md</span>)
+<span class="k">-</span> Usage
+    <span class="k">-</span> [<span class="nt">Foo</span>](<span class="na">usage/foo.md</span>)
+    <span class="k">-</span> usage/*.md
+<span class="k">-</span> */
+<span class="k">-</span> *.md
+<span class="k">-</span> [<span class="nt">API docs</span>](<span class="na">api/</span>)
+<span class="k">-</span> [<span class="nt">License</span>](<span class="na">license.md</span>)
+</code></pre></div>
+<p></td><td></p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">Welcome</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<span class="p p-Indicator">-</span> <span class="nt">Usage</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">usage/foo.md</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage/bar.md</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage/baz.md</span>
+<span class="p p-Indicator">-</span> <span class="nt">Tips</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tips/other-stuff.md</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tips/stuff.md</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">changelog.md</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">credits.md</span>
+<span class="p p-Indicator">-</span> <span class="nt">API docs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Foo.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Bar/index.md</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Bar/Baz.md</span>
+<span class="p p-Indicator">-</span> <span class="nt">License</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">license.md</span>
+</code></pre></div>
+<p></td><td></p>
+<ul>
+<li>index.md</li>
+<li>changelog.md</li>
+<li>credits.md</li>
+<li>usage / bar.md</li>
+<li>usage / baz.md</li>
+<li>usage / foo.md</li>
+<li>tips / stuff.md</li>
+<li>tips / other-stuff.md</li>
+<li>api / Foo.md</li>
+<li>api / Bar / index.md</li>
+<li>api / Bar / Baz.md</li>
+</ul>
+<p></td></tr></p>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Speaking of API docs... Want to fine-tune file ordering in a large directory tree? Check out <a href="#extras">integrations with other plugins</a>.</p>
+</div>
+<p>The paths are relative to the directory that the nav file is in. Matching files in subdirectories also works, in both ways: <code>*/foo.md</code> and <code>foo/*.md</code>. The asterisk is confined to one path component (or you could say it excludes <code>/</code> as an allowed character).</p>
+<p>As it's impossible for a user to specify the titles of items matched by a wildcard, they have to be inferred, based on normal rules of MkDocs.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>As a fun fact, having a nav file with the following content is exactly the same as <a href="#inferred-sub-directory">not having any nav file</a> there:</p>
+<div class="highlight"><pre><span></span><code><span class="k">-</span> *
+</code></pre></div>
+<p>The ordering of items matches MkDocs' default, so first go all files, alphabetically (but with the index file first), then all directories. But, as an example, you could actually swap that, by writing:</p>
+<div class="highlight"><pre><span></span><code><span class="k">-</span> */
+<span class="k">-</span> *
+</code></pre></div>
+</div>
+<p>You can find more examples of the wildcard syntax <a href="https://github.com/oprypin/mkdocs-literate-nav/tree/master/tests/nav/wildcard">in the testcases directory</a>.</p>
+<h3 id="config-nav_file">Config: <code>nav_file</code><a class="headerlink" href="#config-nav_file" title="Permanent link">#</a></h3>
+<p>We've been using <strong>SUMMARY.md</strong> as the name of the file that specifies the nav (actually that is also the default value of <code>nav_file</code>), but naturally, you can use any other file name.</p>
+<p>The plugin takes care to not let MkDocs complain if you don't end up using the nav document as an actual page of your doc site.</p>
+<h4 id="show-off-your-nav-on-the-front-page">Show off your nav on the front page<a class="headerlink" href="#show-off-your-nav-on-the-front-page" title="Permanent link">#</a></h4>
+<p>Or maybe you want the opposite -- make the nav page very prominent? You can actually use the index page, <strong>README.md</strong>, for the nav!</p>
+<p>Why would one do this? Well, GitHub (or another source hosting) also displays the Markdown files, and it's quite a nice perk to show off your navigation right in the index page of a directory. Of course, then you'd probably refrain from using <a href="#wildcards">wildcards</a>. <a href="#nav-cross-link">Directory cross linking</a> still looks great, though.</p>
+<p>What's that, you ask? If the index page is taken up by navigation, we can't put any other content there, can we? Actually, we can! The nav list can just be put at the bottom of the page that also has whatever other content before that.</p>
+<p><a href="https://github.com/oprypin/crsfml/tree/master/docs/tutorials">See an example of all this in action</a></p>
 <h4 id="explicit-nav-mark">Explicit nav mark<a class="headerlink" href="#explicit-nav-mark" title="Permanent link">#</a></h4>
-<p>If the plugin is confused where on the page the nav is, please precede the Markdown list with this HTML comment (verbatim) on a line of its own:</p>
+<p>If the plugin is confused where in the document the nav is, or if you want to explicitly put it in a particular location, please precede the Markdown list with this HTML comment (verbatim) on a line of its own:</p>
 <div class="highlight"><pre><span></span><code>&lt;!--nav--&gt;
 </code></pre></div>
+<h3 id="hybrid-nav">Hybrid nav<a class="headerlink" href="#hybrid-nav" title="Permanent link">#</a></h3>
+<p>Do the features of this plugin interest you but you're not on board with the idea of migrating your whole nav?</p>
+<p>You can actually keep using <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">MkDocs' own nav specification</a> at the root, <em>but</em> defer only some subdirectories to the <em>literate-nav</em> plugin. In that case make sure to <em>not</em> put a nav file at the <code>docs</code> root, otherwise the native nav will be ignored.</p>
+<table>
+<tr>
+<td>To get this navigation,</td>
+<td>put this into <b>mkdocs.yml</b>:</td>
+<td>(old YAML equivalent:)</td>
+<p></tr><tr><td rowspan="3"></p>
+<ul>
+<li><a href="#index.md">Frob</a></li>
+<li><a href="#baz.md">Baz</a></li>
+<li>Borgs<ul>
+<li><a href="#borgs/bar.md">Bar</a></li>
+<li><a href="#borgs/foo.md">Foo</a></li>
+</ul>
+</li>
+</ul>
+<p></td><td></p>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/</span>
+</code></pre></div>
+<p></td><td rowspan="3"></p>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+</code></pre></div>
+<p></td></tr><tr></p>
+<td>&amp; create the file <b>borgs/SUMMARY.md</b>:</td>
+<p></tr><tr><td></p>
+<div class="highlight"><pre><span></span><code><span class="k">*</span> [<span class="nt">Bar</span>](<span class="na">bar.md</span>)
+<span class="k">*</span> [<span class="nt">Foo</span>](<span class="na">foo.md</span>)
+</code></pre></div>
+<p></td></tr></p>
+</table>
+<p>The syntax to defer to a subdirectory, just like <a href="#nav-cross-link">in a literate nav</a>, is to write an item that <em>ends</em> with a slash. It is valid to specify a directory in all the same places where a file would be valid.</p>
+<h4 id="mkdocs-native-nav-with-inferred-subdirectories">MkDocs native nav with inferred subdirectories<a class="headerlink" href="#mkdocs-native-nav-with-inferred-subdirectories" title="Permanent link">#</a></h4>
+<p>As before, whenever you have the option of using a literate nav file for a sub-directory, you can also <em>not</em> put any nav file there and infer the sub-directory instead. So, <em>not</em> creating the file <strong>borgs/SUMMARY.md</strong> would have yielded the same result in the above example.</p>
+<p>So basically, you can use the <em>literate-nav</em> plugin just for its ability to infer only sub-directories, without ever writing any actual "literate navs".</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The nav cross-link is currently the <strong>only</strong> feature that <em>literate-nav</em> brings to MkDocs' native nav; there are no equivalents to other features.</p>
+</div>
+<h4 id="details-about-hybrid-nav">Details about hybrid nav<a class="headerlink" href="#details-about-hybrid-nav" title="Permanent link">#</a></h4>
+<p>Note that there are two ways to insert a subdirectory, with significant difference:</p>
+<table>
+<tr>
+<td>To get this navigation,</td>
+<td>put this into <b>mkdocs.yml</b>:</td>
+<td>To get this navigation,</td>
+<td>put this into <b>mkdocs.yml</b>:</td>
+<p></tr><tr><td></p>
+<ul>
+<li><a href="#index.md">Frob</a></li>
+<li><a href="#baz.md">Baz</a></li>
+<li>Borgs<ul>
+<li><a href="#borgs/bar.md">Bar</a></li>
+<li><a href="#borgs/foo.md">Foo</a></li>
+</ul>
+</li>
+</ul>
+<p></td><td></p>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/</span>
+</code></pre></div>
+<p></td><td></p>
+<ul>
+<li><a href="#index.md">Frob</a></li>
+<li><a href="#baz.md">Baz</a></li>
+<li><a href="#borgs/bar.md">Bar</a></li>
+<li><a href="#borgs/foo.md">Foo</a></li>
+</ul>
+<p></td><td></p>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">borgs/</span>
+</code></pre></div>
+<p></td></tr></p>
+</table>
+<p>So, a directory item with a title becomes a section titled as such. And an item without a title gets inlined into the existing section. This simple example has no sub-sub-directories, but the relative subdirectory structure would be preserved in both cases if it did.</p>
 <h3 id="migrating-from-gitbook">Migrating from GitBook?<a class="headerlink" href="#migrating-from-gitbook" title="Permanent link">#</a></h3>
 <p>It might be very easy! Just beware of the stricter Markdown parser; it will <em>not</em> accept 2-space indentation for sub-lists.</p>
 <p>And use this for <strong>mkdocs.yml</strong>:</p>
@@ -564,6 +868,11 @@
 </code></pre></div>
 
 </td></tr></table>
+
+<h3 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">#</a></h3>
+<h4 id="programmatic-control-over-the-nav">Programmatic control over the nav<a class="headerlink" href="#programmatic-control-over-the-nav" title="Permanent link">#</a></h4>
+<p>Let's say you need the ability to infer nav for a sub-directory, but are unhappy with the default naming/layout behavior, and you don't want to write all that out manually either. Then, definitely check out the <strong><em><a href="https://oprypin.github.io/mkdocs-gen-files/">gen-files</a></em> plugin</strong>. Its normal usage is to programmatically add files to the site during the build, but that also includes literate nav files! Moreover, you don't even have to teach your program to write Markdown. There's a more direct integration: <code>mkdocs_gen_files.Nav.build_literate_nav</code>.</p>
+<p><a href="https://github.com/mkdocstrings/mkdocstrings/blob/5802b1ef5ad9bf6077974f777bd55f32ce2bc219/docs/gen_doc_stubs.py#L25">See an example that generates both the files and the navigation covering them</a>.</p>
                 
               
               
