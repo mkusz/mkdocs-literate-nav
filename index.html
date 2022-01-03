@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://oprypin.github.io/mkdocs-literate-nav/index.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.f7951f6f.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.bb3983ee.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
@@ -557,10 +557,10 @@
 <p>Works well with <strong><a href="https://oprypin.github.io/mkdocs-section-index/">section-index</a></strong> and <strong><a href="https://oprypin.github.io/mkdocs-gen-files/">gen-files</a></strong>. Supplants <strong><a href="https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin">awesome-pages</a></strong>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Activate the plugin in <strong>mkdocs.yml</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span>
-  <span class="p p-Indicator">-</span> <span class="nt">literate-nav</span><span class="p">:</span>
-      <span class="nt">nav_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SUMMARY.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">literate-nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">nav_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUMMARY.md</span><span class="w"></span>
 </code></pre></div>
 <p>and <strong>drop</strong> the <code>nav</code> section if it's present there; it will be ignored now. (<a href="#hybrid-nav">Unless you want to keep it?</a>)</p>
 <table>
@@ -586,13 +586,13 @@
     <span class="k">*</span> [<span class="nt">Foo</span>](<span class="na">borgs/foo.md</span>)
 </code></pre></div>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">borgs/index.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/index.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span><span class="w"></span>
 </code></pre></div>
 <p></td></tr></p>
 </table>
@@ -625,12 +625,12 @@
     <span class="k">*</span> [<span class="nt">Foo</span>](<span class="na">borgs/foo.md</span>)
 </code></pre></div>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span><span class="w"></span>
 </code></pre></div>
 <p></td></tr></p>
 </table>
@@ -659,12 +659,12 @@
 <span class="k">*</span> [<span class="nt">Borgs</span>](<span class="na">borgs/</span>)
 </code></pre></div>
 <p></td><td rowspan="3"></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span><span class="w"></span>
 </code></pre></div>
 <p></td></tr><tr></p>
 <td>and the file <b>borgs/SUMMARY.md</b>:</td>
@@ -705,22 +705,22 @@
 <span class="k">-</span> [<span class="nt">License</span>](<span class="na">license.md</span>)
 </code></pre></div>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">Welcome</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-<span class="p p-Indicator">-</span> <span class="nt">Usage</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">usage/foo.md</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage/bar.md</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage/baz.md</span>
-<span class="p p-Indicator">-</span> <span class="nt">Tips</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tips/other-stuff.md</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tips/stuff.md</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">changelog.md</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">credits.md</span>
-<span class="p p-Indicator">-</span> <span class="nt">API docs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Foo.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Bar/index.md</span>
-        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">api/Bar/Baz.md</span>
-<span class="p p-Indicator">-</span> <span class="nt">License</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">license.md</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Welcome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Usage</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage/foo.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage/bar.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usage/baz.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Tips</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tips/other-stuff.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tips/stuff.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">changelog.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">credits.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">API docs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api/Foo.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Bar</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api/Bar/index.md</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api/Bar/Baz.md</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">License</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">license.md</span><span class="w"></span>
 </code></pre></div>
 <p></td><td></p>
 <ul>
@@ -763,7 +763,7 @@
 <p><a href="https://github.com/oprypin/crsfml/tree/master/docs/tutorials">See an example of all this in action</a></p>
 <h4 id="explicit-nav-mark">Explicit nav mark<a class="headerlink" href="#explicit-nav-mark" title="Permanent link">#</a></h4>
 <p>If the plugin is confused where in the document the nav is, or if you want to explicitly put it in a particular location, please precede the Markdown list with this HTML comment (verbatim) on a line of its own:</p>
-<div class="highlight"><pre><span></span><code><span class="c">&lt;!--nav--&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!--nav--&gt;</span>
 </code></pre></div>
 <h3 id="hybrid-nav">Hybrid nav<a class="headerlink" href="#hybrid-nav" title="Permanent link">#</a></h3>
 <p>Do the features of this plugin interest you but you're not on board with the idea of migrating your whole nav?</p>
@@ -784,18 +784,18 @@
 </li>
 </ul>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/</span><span class="w"></span>
 </code></pre></div>
 <p></td><td rowspan="3"></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Bar</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span>
-    <span class="p p-Indicator">-</span> <span class="nt">Foo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/bar.md</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/foo.md</span><span class="w"></span>
 </code></pre></div>
 <p></td></tr><tr></p>
 <td>&amp; create the file <b>borgs/SUMMARY.md</b>:</td>
@@ -835,10 +835,10 @@
 </li>
 </ul>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Borgs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">borgs/</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Borgs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/</span><span class="w"></span>
 </code></pre></div>
 <p></td><td></p>
 <ul>
@@ -848,10 +848,10 @@
 <li><a href="#borgs/foo.md">Foo</a></li>
 </ul>
 <p></td><td></p>
-<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Frob</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
-  <span class="p p-Indicator">-</span> <span class="nt">Baz</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">baz.md</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">borgs/*</span>
+<div class="highlight"><pre><span></span><code><span class="nt">nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Frob</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baz.md</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">borgs/*</span><span class="w"></span>
 </code></pre></div>
 <p></td></tr></p>
 </table>
@@ -865,25 +865,25 @@
 <p>And use this for <strong>mkdocs.yml</strong>:</p>
 <table><tr><td>
 
-<div class="highlight"><pre><span></span><code><span class="nt">use_directory_urls</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><span class="nt">use_directory_urls</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">same-dir</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">section-index</span>
-  <span class="p p-Indicator">-</span> <span class="nt">literate-nav</span><span class="p">:</span>
-      <span class="nt">nav_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SUMMARY.md</span>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">same-dir</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">section-index</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">literate-nav</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">nav_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SUMMARY.md</span><span class="w"></span>
 </code></pre></div>
 
 </td><td>
 
-<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">material</span>
+<div class="highlight"><pre><span></span><code><span class="nt">theme</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.highlight</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.magiclink</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
+<div class="highlight"><pre><span></span><code><span class="nt">markdown_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.highlight</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.magiclink</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span><span class="w"></span>
 </code></pre></div>
 
 </td></tr></table>
@@ -937,10 +937,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.361d90f1.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.649a939e.min.js"></script>
+      <script src="assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>
