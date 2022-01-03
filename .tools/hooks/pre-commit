@@ -1,2 +1,2 @@
 #!/bin/sh
-exec poetry run "$(dirname "$0")/../ci.sh"
+exec pdm run "$(dirname "$0")/../ci.sh"

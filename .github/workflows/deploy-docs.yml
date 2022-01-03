@@ -14,7 +14,9 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v2
       - name: Install dependencies
-        run: pip install . -r docs/requirements.txt
+        run: |
+          perl -ne '$p=0 if /[\[\]]/; print "$1\0" if $p && /^ *"(.+?)"/; $p=1 if /^docs =/' pyproject.toml |
+            xargs -0 -t pip install -U --upgrade-strategy=eager
       - name: Build site
         run: mkdocs build
       - name: Deploy to gh-pages
